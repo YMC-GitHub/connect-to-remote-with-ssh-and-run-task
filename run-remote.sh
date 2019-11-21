@@ -1,0 +1,20 @@
+#!/bin/sh
+
+PRIVITE_KEY_FILE_NAME=google-clound-ssr
+PRIVITE_KEY_FILE_PATH=~/.ssh/
+# 公钥文件名字
+PUBLIC_KEY_FILE_NAME=${PRIVITE_KEY_FILE_NAME}.pub
+# SSH服务所在主机地址
+SSH_SERVER_IP=192.168.2.3
+# SSH服务所在主机账号
+#SSH_SERVER_USER=yemiancheng
+SSH_SERVER_USER=root
+
+SCRIPT_FILE=/root/shell/centos-set-default-mode/centos-set-default-mode.sh
+#ssh -t -t -i ${PRIVITE_KEY_FILE_PATH}${PRIVITE_KEY_FILE_NAME} $SSH_SERVER_USER@$SSH_SERVER_IP $SCRIPT_FILE --help
+#ssh -t -t -i ${PRIVITE_KEY_FILE_PATH}${PRIVITE_KEY_FILE_NAME} $SSH_SERVER_USER@$SSH_SERVER_IP $SCRIPT_FILE --MODE m
+
+ssh -t -t -i ${PRIVITE_KEY_FILE_PATH}${PRIVITE_KEY_FILE_NAME} $SSH_SERVER_USER@$SSH_SERVER_IP $SCRIPT_FILE --MODE m
+
+#### usage
+# ./run-remote.sh
