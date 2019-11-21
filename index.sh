@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PRIVITE_KEY_FILE_NAME=google-clound-ssr
+PRIVITE_KEY_FILE_PATH=~/.ssh/
+OLD_VM_SSH_SERVER_IP=192.168.2.2
+OLD_VM_SSH_SERVER_USER=root
+NEW_VM_SSH_SERVER_IP=192.168.2.5
+ssh -tt -i ${PRIVITE_KEY_FILE_PATH}${PRIVITE_KEY_FILE_NAME} $OLD_VM_SSH_SERVER_USER@$OLD_VM_SSH_SERVER_IP < tasks/hello.sh
+
+####usage
+# bash ./index.sh
